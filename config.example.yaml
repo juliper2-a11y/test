@@ -1,0 +1,24 @@
+symbol: "AAPL"
+interval: "15m"
+period: "7d"
+polling_seconds: 300
+
+rules:
+  - type: "ma_cross_up"
+    params:
+      short_window: 5
+      long_window: 20
+
+  - type: "rsi_below"
+    params:
+      threshold: 30
+      window: 14
+
+  - type: "breakout_high"
+    params:
+      lookback: 20
+
+notifications:
+  telegram:
+    bot_token: "YOUR_BOT_TOKEN"
+    chat_id: "YOUR_CHAT_ID"
